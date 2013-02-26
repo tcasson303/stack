@@ -32,3 +32,44 @@ h6.headers {
   width: 235px;
 }
 
+/*Lightbox Styles*/
+
+#lightbox {
+    position:fixed; /* keeps the lightbox window in the current viewport */
+    top:10%;
+    left:10%;
+    width:943px;
+    height:90%;
+    margin-right: auto;
+    mergin-left: auto;
+    background:url(./overlay.png) repeat;
+    text-align:center;
+}
+
+#lightbox p {
+    text-align:right;
+    color:#fff;
+    margin-right:20px;
+    font-size:12px;
+}
+
+#lightbox img {
+    box-shadow:0 0 25px #111;
+    -webkit-box-shadow:0 0 25px #111;
+    -moz-box-shadow:0 0 25px #111;
+    max-width:940px;
+}
+
+#lightbox iframe {
+    box-shadow:0 0 25px #111;
+    -webkit-box-shadow:0 0 25px #111;
+    -moz-box-shadow:0 0 25px #111;
+    width:940px;
+    height:100%;
+}
+
+/*Clickable style for iOS compatibility*/
+
+p.clickable {
+  cursor:pointer
+}

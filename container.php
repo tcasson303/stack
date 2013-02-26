@@ -80,9 +80,11 @@
 	$convertout = `convert -quality 100 ./users/$newdir/$mfile.jpg -trim -resize 240 ./users/$newdir/$mfile.jpg`;
     }
     if (file_exists($multiimgfile[$i])) {
-    echo '<div id="search' . $i . '" class="box"><img src="' . $multiimgfile[$i] . '">' . "\n";
+    error_log("HTML is $newdir/$mfile");
+    echo '<div id="search' . $i . '" class="box"><a href="http://www.foodtruckers.com/stackeye/users/' . "$newdir/$mfile" . '.html" class="lightbox_trigger"><img src="' . $multiimgfile[$i] . '"></a>' . "\n";
     } else {
-    echo '<div id="search' . $i . '" class="box"><img src="' . $imgfile[$i] . '">' . "\n";
+    error_log("HTML is $newdir/$mfile");
+    echo '<div id="search' . $i . '" class="box"><a href="http://www.foodtruckers.com/stackeye/users/' . "$newdir/$mfile" . '.html" class="lightbox_trigger"><img src="' . $imgfile[$i] . '"></a>' . "\n";
     }
     echo '<h6 class="headers">From: ' . $storage->getMessage($i)->from . '</h6><h6 class="headers">Subject: ' . $storage->getMessage($i)->subject . '</h6><h6 class="headers">Date:' . $storage->getMessage($i)->date . '</h6></div>' . "\n";
     //echo '<div id="search' . $j . '" style="{border:1px solid blue}">' . 'UniqueID: ' . $storage->getUniqueId($searched[$j]) . "\nBody: " . $storage->getMessage($searched[$j])->getContent() . "</div>\n";
